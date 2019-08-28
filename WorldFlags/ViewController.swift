@@ -20,8 +20,7 @@ class ViewController: UITableViewController {
         
         let items = try! FileManager.default.contentsOfDirectory(atPath: Bundle.main.resourcePath!)
         print(items)
-        let items2 = try! FileManager.default.contentsOfDirectory(atPath: Bundle.main.bundlePath)
-        print(items2)
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,6 +39,8 @@ class ViewController: UITableViewController {
         } else {
             cell.textLabel?.text = countries[indexPath.row].capitalized
         }
+        
+        cell.imageView?.image = UIImage(named: countries[indexPath.row])
         
         return cell
     }
